@@ -228,15 +228,15 @@
 
         section h3 {
             margin-bottom: 1rem;
-            visibility: hidden;
+            display: none
         }
 
         section p,
         ul {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             margin: 0;
             color: #6f6f6f;
-            line-height: 3.2rem;
+            line-height: 2.8rem;
             list-style-type: none;
             margin: 0;
             padding: 0;
@@ -258,12 +258,16 @@
         }
 
         @keyframes logo {
-            100% { color: rgb(189, 189, 189); }
+            100% { color: rgb(162, 162, 162); }
             0% { color: rgb(0, 0, 0); }
         }
 
         #logo a {
             animation: logo 8s linear infinite alternate;
+        }
+
+        .black {
+            color: black!important;
         }
         
     </style>
@@ -298,18 +302,18 @@
             <section id="company">
                 <h3>Společnost</h3>
                 <ul>
-                    <li>Evrise group s.r.o.</li>
-                    <li>Adresa: <span class="br"></span>Václavské náměstí 841/3, Nové Město, 110 00 Praha 1</li>
-                    <li>IČO: 19943121, DIČ: <span class="br"></span>CZ19943121</li>
+                    <li><span class="black">Evrise group s.r.o.</span></li>
+                    <li>Adresa: <span class="br"></span>Václavské náměstí 841/3, <span class="br"></span> Nové Město, 110 00 Praha 1</li>
+                    <li>IČO: 19943121, <span class="br"></span>DIČ: CZ19943121</li>
                     <li>Bankovní spojení: <span class="br"></span>332759427/0300 (ČSOB)</li>
-                    <li>Spisová značka: <span class="br"></span> 394250 vedená u Městského soudu v Praze</li>
+                    <li>Spisová značka: <span class="br"></span> 394250 Městský soud v Praze</li>
                 </ul>
 
             </section>
             <section id="contact">
                 <h3>Kontakt</h3>
                 <ul>
-                    <li>Hubert Šváb</li>
+                    <li><span class="black">Hubert Šváb<span></li>
                     <li><a href="mailto:hubert.svab@evrise.cz">hubert.svab@evrise.cz</a></li>
                     <li>+420&nbsp;731&nbsp;736&nbsp;174</li>
                 </ul>
