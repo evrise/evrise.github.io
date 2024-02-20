@@ -256,6 +256,15 @@
                 display: block
             }
         }
+
+        @keyframes logo {
+            100% { color: rgb(189, 189, 189); }
+            0% { color: rgb(0, 0, 0); }
+        }
+
+        #logo a {
+            animation: logo 8s linear infinite alternate;
+        }
         
     </style>
     <script type='module'>
@@ -283,9 +292,9 @@
             </div>
         </header>
         <main role="main">
-            <!-- <section id="services">
-                <p>&hellip;</p>
-            </section> -->
+            <section id="services">
+                <div id="nothing"></div>
+            </section>
             <section id="company">
                 <h3>Společnost</h3>
                 <ul>
