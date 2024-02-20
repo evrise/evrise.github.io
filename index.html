@@ -187,6 +187,7 @@
         header a {
             text-decoration: none;
             font-weight: bold;
+            color: #3b3b3b;
         }
 
         header a:hover {
@@ -216,10 +217,10 @@
 
         section p,
         ul {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             margin: 0;
             color: #6f6f6f;
-            line-height: 3.0rem;
+            line-height: 3.2rem;
             list-style-type: none;
             margin: 0;
             padding: 0;
@@ -233,6 +234,13 @@
         section#services {
             padding: 0.4rem;
         }
+
+        @media (max-width: 480px) {
+            .br {
+                display: block
+            }
+        }
+        
     </style>
     <script type='module'>
         window.onload = () => {
@@ -266,10 +274,10 @@
                 <h3>Společnost</h3>
                 <ul>
                     <li>Evrise group s.r.o.</li>
-                    <li>Václavské náměstí 841/3, Nové Město, 110 00 Praha 1</li>
-                    <li>IČ: 19943121, DIČ: CZ19943121</li>
-                    <li>Bankovní spojení: 332759427/0300 (ČSOB)</li>
-                    <li>Spisová značka: C 394250 vedená u Městského soudu v Praze</li>
+                    <li>Adresa: <span class="br"></span>Václavské náměstí 841/3, Nové Město, 110 00 Praha 1</li>
+                    <li>IČO: 19943121, DIČ: <span class="br"></span>CZ19943121</li>
+                    <li>Bankovní spojení: <span class="br"></span>332759427/0300 (ČSOB)</li>
+                    <li>Spisová značka: <span class="br"></span> 394250 vedená u Městského soudu v Praze</li>
                 </ul>
 
             </section>
