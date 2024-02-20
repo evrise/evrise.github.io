@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>evrise.cz</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./index.css'>
+    <script type='module'>
+        window.onload = () => {
+            let year = document.querySelector("#copyright-year");
+            year.innerHTML = (new Date).getFullYear();
+        }
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="subitem lhs">
+                <div id="logo">
+                    <a href="./">⌗ Evrise</a>
+                </div>
+            </div>
+            <div class="subitem rhs">
+                <nav role="main">
+                    <div><a href="#contact">Kontakt</a></div>
+                    <div><a href="#company">Společnost</a></div>
+                    <div><a href="#services">Služby</a></div>
+                </nav>
+            </div>
+        </header>
+        <main role="main">
+            <!-- <section id="teaser"><h3>Teaser</h3></section>-->
+            
+            <section id="services">
+                <p>&hellip;</p>
+            </section>
+            
+            <section id="company">
+                <h3>Společnost</h3>
+                
+                    <ul>
+                        <li> Evrise group s.r.o.</li>
+                        <li> Václavské náměstí 841/3, Nové Město, 110 00 Praha 1</li>
+                        <li>IČ: 19943121, DIČ: CZ19943121</li>
+                        <li>Bankovní spojení: 332759427/0300 (ČSOB)</li>
+                    </ul>
+                
+            </section>
+            
+            <section id="contact">
+                <h3>Kontakt</h3>
+                
+                    <ul>
+                        <li>Hubert Šváb</li>
+                        <li><a href="mailto:hubert.svab@evrise.cz">hubert.svab@evrise.cz</a></li>
+                        <li>+420 731 73 6174</li>
+                    </ul>
+                
+            </section>
+
+        </main>
+        <footer>
+            <div class="lhs">
+                &copy; <span id="copyright-year"></span>&nbsp;Evrise Group s.r.o
+            </div>
+            <div class="rhs">
+                <!-- [[footer right]] -->
+            </div>
+        </footer>
+    </div>
+    </div>
+</body>
+
+</html>

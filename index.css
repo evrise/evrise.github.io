@@ -1,0 +1,278 @@
+/* NOTE:
+ * Grid/Flex layout stuff starts at line 187. 
+ * The stuff before is just boring old CSS to make content look not crappy.
+ */
+
+
+/*--------------------------------------------------------------
+CSS Reset
+--------------------------------------------------------------*/
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    display: block;
+    border: 0;
+    width: 100%;
+    height: auto;
+}
+
+
+/*--------------------------------------------------------------
+Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar */
+}
+
+
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+    color: #3a3a3a;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+    /* text-align: center; */
+    margin: 0;
+    padding: 1em 0;
+    color: #050505;
+}
+
+p {
+    margin: 0;
+    padding: 1em 0;
+}
+
+
+/*--------------------------------------------------------------
+If no grid support, limit width to 50em and center align
+--------------------------------------------------------------*/
+@supports not (display: grid) {
+    .grid {
+        max-width: 50em;
+        margin: 0 auto;
+    }
+}
+
+/*--------------------------------------------------------------
+Use flex to create a three-bucket layout 
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 700px) {
+    @supports (display: flex) {
+
+        .buckets ul {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .buckets li {
+            width: 31%;
+        }
+
+    }
+}
+
+/*--------------------------------------------------------------
+CSS Grid layout for wider screens, when browser supports grid:
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 600px) {
+    /* Layout with CSS Grid */
+    @supports (display: grid) {
+
+        /* Four-column layout. Two center columns have a total max width of 50em: */
+        .grid {
+
+            display: grid;
+            grid-template-columns: 1fr repeat(2, minmax(auto, 200px)) 1fr;
+        }
+
+        /* Center items by placing them in the two center columns: */
+        .splash-content,
+        .more-content,
+        .buckets ul {
+            grid-column: 2/4;
+        }
+
+        /* Use automatic grid placement + span to let each item span two columns:*/
+        .twin,
+        .colophon aside {
+            grid-column: span 2;
+        }
+
+    }
+}
+
+body {
+    background-color: white
+        /* background-color: rgb(188, 222, 203) */
+}
+
+
+#wrapper {
+    display: grid;
+    grid-template-columns: 1fr repeat(6, minmax(auto, 12rem)) 1fr;
+    grid-template-rows: minmax(auto, auto) 1fr minmax(auto, auto);
+    min-height: 100vh;
+}
+
+
+main {
+    grid-column: 2/8;
+    background-color: white;
+    padding: 1rem;
+}
+
+header,
+footer {
+    display: grid;
+    grid-column: span 8;
+    grid-template-columns: 1fr repeat(3, minmax(auto, 24rem)) 1fr;
+    background-color: white;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+.lhs {
+    grid-row: 1/1;
+    grid-column: 2/4;
+}
+
+#logo {
+    display: inline-block;
+    padding: 0.6em;
+    margin-right: 2rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+header span {
+    padding: 2rem;
+}
+
+#search {
+    padding: 0.3em;
+    border: 1px solid #484848;
+    border-radius: 0.2em;
+}
+
+.rhs {
+    grid-row: 1/1;
+    grid-column: 3/5;
+}
+
+.rhs nav {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.rhs nav * {
+    padding: 0.4rem;
+    text-align: right;
+    margin-left: 1.6rem;
+    display: inline-block;
+}
+
+header {
+    min-height: 3rem;
+    border-bottom: 1px solid #666;
+    background-color: black;
+    color: white;
+}
+
+header a {
+    text-decoration: none;
+    color: #eaeaea;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: white
+}
+
+header a:visited {
+    color: rgb(255, 255, 255);
+
+}
+
+footer {
+    min-height: 3rem;
+    border-top: 1px solid #666;
+}
+
+section {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgb(225, 225, 225);
+    min-height: 24rem;
+}
+
+section h3 {
+    /* visibility: hidden; */
+    margin-bottom: 1rem;
+}
+
+section p, ul {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+section:last-of-type {
+    border: none;
+}
+
+section#teaser {
+    height: 30rem;
+    padding: 0.4rem;
+}
+
+
+section#services {
+    padding: 0.4rem;
+}
